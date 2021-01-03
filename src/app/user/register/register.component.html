@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="forms-container">
+    <div class="signin-signup">
+      <form  class="sign-in-form"(ngSubmit)="register()">
+        <h2 class="title">Register</h2>
+        <div class="input-field">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="email" name="email" [(ngModel)]="email" />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input type="password" placeholder="password"  name="password" [(ngModel)]="password"/>
+        </div>
+        <input type="submit"  value="Register" class="btn solid" />
+        <div class="form-group">
+          <p *ngIf="error.message.length > 0" class="text-danger">
+              {{error.message}} </p>
+              <p *ngIf="message.length > 0" class="text-info">
+                  {{message}} </p>
+      </div>
+      </form>
+      <a routerLink="/login">Login</a>
+    </div>
+  </div>
+</div>

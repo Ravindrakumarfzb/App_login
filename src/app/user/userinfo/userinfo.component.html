@@ -1,0 +1,44 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+      
+        <input class="form-control mt-2 mb-2 "type="text"placeholder="Search Here" [(ngModel)]="body" (input)="Search()">
+        </div>
+
+        <div class="col-md-3 mt-3"*ngIf = "authservice.currentUser">
+          <h5><b>Email:</b>{{authservice.currentUserName}}</h5>
+          </div>
+
+
+        <div class="col-md-4 mt-3"*ngIf = "authservice.currentUser">
+          <h5><b>Password:</b>{{authservice.currentUserId}}</h5>
+          </div>
+          
+            <div class="col-md-1 mt-2">
+              <button class=" btn btn-danger" (click)="authservice.singout()">Logout</button>
+            </div>
+  </div>
+      <table class="table " style="border: solid 2px;">
+          <thead>
+            <tr>
+              <th  scope="col">Id</th>
+              <th  scope="col">UserId</th>
+              <th  scope="col">Title</th>
+              <th  scope="col" >Body</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let a of data">
+              <td><b>{{a.id}}</b></td>
+              <td>{{a.userId}}</td>
+              <td><i>{{a.title}}</i></td>
+              <td>{{a.body}}</td>
+            </tr>
+      
+          </tbody>
+        </table>
+         
+         
+        </div>
+  
+  
